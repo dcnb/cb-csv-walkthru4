@@ -1,0 +1,51 @@
+{
+  "title": "Build a Digital Collection with CollectionBuilder",
+  "description": "Learn to create a digital collection website using metadata, Jekyll, and GitHub Pages—no software installation required!",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "title": "Understanding CollectionBuilder",
+      "description": "Learn what CollectionBuilder is and explore the demo collection structure",
+      "file": "1-understanding-collectionbuilder.md"
+    },
+    {
+      "title": "Add Your Metadata",
+      "description": "Customize the metadata CSV file that drives your collection",
+      "file": "2-add-your-metadata.md"
+    },
+    {
+      "title": "Configure Your Site",
+      "description": "Update the _config.yml file with your collection information",
+      "file": "3-configure-your-site.md"
+    },
+    {
+      "title": "Preview Your Collection",
+      "description": "Use GitHub Codespaces to build and preview your site locally",
+      "file": "4-preview-your-collection.md"
+    },
+    {
+      "title": "Customize Your Site",
+      "description": "Edit the About page and add a featured image to personalize your collection",
+      "file": "5-customize-your-site.md"
+    },
+    {
+      "title": "Publish to GitHub Pages",
+      "description": "Deploy your collection to the web using GitHub Pages and Actions",
+      "file": "6-publish-to-github-pages.md"
+    }
+  ],
+  "metadata": {
+    "duration": "60-90 minutes",
+    "level": "beginner",
+    "prerequisites": "GitHub account",
+    "topics": [
+      "Jekyll",
+      "Static sites",
+      "Digital collections",
+      "Metadata",
+      "GitHub Pages",
+      "GitHub Codespaces"
+    ],
+    "audience": "Librarians, archivists, digital humanities scholars, and anyone interested in creating digital collection websites"
+  }
+}

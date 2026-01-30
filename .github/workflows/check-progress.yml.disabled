@@ -1,0 +1,68 @@
+name: Check Progress (DISABLED - replaced by step workflows)
+
+# This workflow has been disabled and replaced by individual step workflows
+# that use the skills/exercise-toolkit for automated validation and feedback.
+
+on:
+  push:
+    branches:
+      - disabled
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check_progress:
+    name: Update Progress
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check commit history and add progress comments
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Find the course issue
+          ISSUE_NUMBER=$(gh issue list --search "Build Your Digital Collection in:title" --state open --json number -q '.[0].number')
+
+          if [ -z "$ISSUE_NUMBER" ]; then
+            echo "No course issue found. Exiting."
+            exit 0
+          fi
+
+          # Get the latest commit message
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+
+          # Check which step was completed based on commit message
+          if [[ "$COMMIT_MSG" == *"Add my name as author"* ]]; then
+            gh issue comment $ISSUE_NUMBER --body "✅ **Step 2 completed!** You've signed your work and made your first commit. Great job! 🎉
+
+          Ready for Step 3? Scroll up to explore the Psychiana metadata!"
+
+          elif [[ "$COMMIT_MSG" == *"Update metadata"* ]]; then
+            gh issue comment $ISSUE_NUMBER --body "✅ **Step 4 completed!** You've customized the metadata. Nice work! 📝
+
+          Move on to Step 5 to configure your site!"
+
+          elif [[ "$COMMIT_MSG" == *"Configure site"* ]] || [[ "$COMMIT_MSG" == *"Configure for Psychiana"* ]]; then
+            gh issue comment $ISSUE_NUMBER --body "✅ **Step 5 completed!** Your site is configured for the Psychiana collection. Excellent! ⚙️
+
+          Time for Step 6 - let's preview your collection!"
+
+          elif [[ "$COMMIT_MSG" == *"Customize About"* ]] || [[ "$COMMIT_MSG" == *"about.md"* ]]; then
+            gh issue comment $ISSUE_NUMBER --body "✅ **Step 7 completed!** Your About page looks great! 🎨
+
+          Final step: Let's publish to GitHub Pages!"
+
+          elif [[ "$COMMIT_MSG" == *"Configure for GitHub Pages"* ]]; then
+            gh issue comment $ISSUE_NUMBER --body "✅ **Step 8 completed!** Your site is deploying to GitHub Pages! 🚀
+
+          Check the Actions tab to watch the deployment. Once it's done, your collection will be live at: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+
+          🎉 **Congratulations on completing the CollectionBuilder tutorial!**"
+          fi
