@@ -5,11 +5,11 @@ permalink: /about.html
 # include CollectionBuilder info at bottom
 credits: true
 # featured-image value can be one objectid for a photo object in this collection, a relative path to an image in this project, or a full url to any image. If left blank, no featured image will appear at top of About page.
-about-featured-image: demo_031
+about-featured-image: demo_021
 # set background-position for featured image, "center", "top", "bottom"
 position: bottom
 # major heading to display over featured image
-heading: About the Collection
+heading: Pschiana is bad
 # paragraph text below heading in featured image
 sub-heading: 
 # additional padding added to the feature to increase size. Give value in em or px, e.g. "5em".
@@ -18,22 +18,25 @@ padding: 6em
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-## About CollectionBuilder CSV
+## About the Psychiana Digital Collection
 
-This demo collection features items from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital/), and is build using [CollectionBuilder-CSV](https://github.com/CollectionBuilder/collectionbuilder-csv).
+The Psychiana Digital Collection documents one of the most fascinating religious movements of the 20th century.
 
-CollectionBuilder-CSV is a "Stand Alone" template for creating digital collection and exhibit websites using Jekyll, given:
+### What Was Psychiana?
 
-- a CSV of collection metadata
-- a folder of images, PDFs, audio, or video files
+Psychiana was a mail-order religion founded by Frank B. Robinson in Moscow, Idaho in 1928. At its peak, it reached hundreds of thousands of subscribers worldwide through magazine advertisements and lessons sent by mail.
 
-Driven by your collection metadata, the template generates engaging visualizations to browse and explore your objects.
-The resulting static site can be hosted on any basic web server.
+### The Collection
 
-[CollectionBuilder](https://github.com/CollectionBuilder/) is an set of open source tools for creating digital collection and exhibit websites that are driven by metadata and powered by modern static web technology.
-See [CB Docs](https://collectionbuilder.github.io/cb-docs/) for detailed information.
+This digital collection includes:
 
-{% include feature/image.html objectid="demo_001" width="75" %} 
+- **Photographs** of Frank B. Robinson, his staff, and Psychiana headquarters
+- **Radio programs** from the "Good News" series
+- **Advertisements and promotional materials**
+- **Business documents and correspondence**
 
-<!-- IMPORTANT!!! DELETE this comment and the include below when you are finished editing this page for your collection. The include below introduces about page features. They will show up on your collection's about page until you delete it.  -->
-{% include cb/about_the_about.md %} 
+The collection demonstrates Psychiana's innovative use of mass media and modern business techniques to spread its New Thought philosophy.
+
+### Learn More
+
+Visit the full collection at the [University of Idaho Library](https://www.lib.uidaho.edu/digital/psychiana/).
